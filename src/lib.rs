@@ -1,12 +1,12 @@
 pub mod error;
 
-use base64::{prelude::BASE64_URL_SAFE_NO_PAD, Engine};
 pub use error::{Error, Result};
 
-use aes_gcm::{
-    aead::{rand_core::RngCore, Aead, OsRng},
-    Aes256Gcm, KeyInit, Nonce,
-};
+use aes_gcm::aead::rand_core::RngCore;
+use aes_gcm::aead::{Aead, OsRng};
+use aes_gcm::{Aes256Gcm, KeyInit, Nonce};
+use base64::prelude::BASE64_URL_SAFE_NO_PAD;
+use base64::Engine;
 use serde::{Deserialize, Serialize};
 
 pub struct Encrypter {

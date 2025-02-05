@@ -1,5 +1,6 @@
 use aes_gcm::aes::cipher::InvalidLength as AesInvalidLength;
 
+#[derive(Debug)]
 pub enum Error {
     InvalidKey(AesInvalidLength),
     Bincode(bincode::Error),
