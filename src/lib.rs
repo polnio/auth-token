@@ -9,6 +9,8 @@ use base64::prelude::BASE64_URL_SAFE_NO_PAD;
 use base64::Engine;
 use serde::{Deserialize, Serialize};
 
+pub const FIRST_PART_SIZE: usize = 12;
+
 pub struct Encrypter {
     inner: Aes256Gcm,
 }
